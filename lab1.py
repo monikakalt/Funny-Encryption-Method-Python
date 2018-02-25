@@ -1,6 +1,17 @@
 from itertools import islice
-
 numbers = []
+class FunnyEncryptionMethod:
+    def __init__(self):
+        self.ones = 0
+
+    # calculates b1 and b2
+    def count_ones(self,b):
+        ones = 0
+        for i in b:
+            if int(i) == 1:
+                ones += 1
+        return ones
+
 
 def read_file():
     try:
@@ -15,10 +26,12 @@ def read_file():
 
 read_file()
 
+#converts from decimal to binary
 def convert_to_binary(n):
-    b = f'{int(n):08b}'
-    return b
+    x1 = f'{int(n):08b}'
+    return x1
 
+#calculates b1 and b2
 def count_ones(b):
     ones = 0
     for i in b:
@@ -26,11 +39,12 @@ def count_ones(b):
             ones += 1
     return ones
 
+#convert from hex to binary
 def convert_from_hex(n):
     integer = int(n,16)
     spec = '{fill}{align}{width}{type}'.format(fill='0', align='>', width=42, type='b')
-    h = format(integer, spec)
-    return h
+    x2 = format(integer, spec)
+    return x2
 
 def save_file(b1, b2):
     try:
